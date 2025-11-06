@@ -1,15 +1,15 @@
-/**
- * Adds or multiplies two numbers
- * @param {number} num1 - First number
- * @param {number} num2 - Second number
- * @returns {number} - Result of the operation
- */
-function add(num1,num2)
-{
-    return num1*num2;
+const express = require("express");
+const app = express();
+
+function add(num1, num2) {
+  return num1 * num2;
 }
 
-// Export the function for testing
-module.exports = { add };
+app.get("/", (req, res) => {
+  const result = add(10, 20);
+  res.send(`Result is ${result}`);
+});
 
-console.log(add(10,20));
+// 👇 Railway injects PORT environment variable
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
