@@ -4,16 +4,14 @@ name: Deployment
 on:
   push:
     branches: [ "main" ] 
-
 jobs:
   build:
     runs-on: ubuntu-latest 
-
     steps:
     - uses: actions/checkout@v4
     # Build Docker image with proper tag
     - run: docker build -t ramkumarinc/ram-node-cdcd:latest .
     # Login to DockerHub using secrets
-    - run: docker login -u ${{ secrets.DOCKERHUB_USER }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+    - run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USER }}" --password-stdin
     # Push image to DockerHub
     - run: docker push ramkumarinc/ram-node-cdcd:latest
