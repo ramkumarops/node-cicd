@@ -12,4 +12,4 @@ function add(num1,num2)
 // Export the function for testing
 module.exports = { add };
 
-// console.log(add(10,20));
+console.log(add(10,20));

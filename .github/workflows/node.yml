@@ -43,8 +43,8 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm install
-    - name: runing unit-test caes
-      run: npm run test
+    - name: Running unit-test cases
+      run: npm test
        
        
      
