@@ -13,6 +13,10 @@ describe('add function', () => {
         expect(add(10, 20)).toBe(200);
     });
 
+    test('should multiply two positive numbers', () => {
+        expect(add(10, 5)).toBe(50);
+    });
+
     /**
      * Test: should handle zero values
      */
