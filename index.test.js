@@ -14,7 +14,7 @@ describe('add function', () => {
     });
 
     test('should multiply two positive numbers', () => {
-        expect(add(10, 5)).toBe(5);
+        expect(add(10, 5)).toBe(50);
     });
 
     /**
