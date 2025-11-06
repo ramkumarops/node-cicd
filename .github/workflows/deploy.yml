@@ -1,0 +1,16 @@
+ 
+name: Deployment
+
+on:
+  push:
+    branches: [ "main" ] 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+
+    steps:
+    - uses: actions/checkout@v4
+    - run: docker build -t ramkumarinc/node-ci-cd
+    - run: docker login -u ${{ secrets.DOCKERHUB_USER }} -p ${{ secrets.DOCKERHUB_PASSWORD }}     
+    - run: docker push ramkumarinc/ram-node-cdcd:latestdi
